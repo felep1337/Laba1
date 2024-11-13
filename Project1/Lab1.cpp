@@ -18,7 +18,7 @@ using namespace std;
 
 void fillArray1(double* x, int n) {
 	for (int i = 0; i < n; i++) {
-		x[i] = i+3;
+		x[i] = i*i;
 	}
 }
 
