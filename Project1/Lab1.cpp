@@ -21,7 +21,6 @@ void fillArray1(double* x, int n) {
 		x[i] = i*i;
 	}
 }
-
 void fillArray2(double* x, int n, int k, double pi) {
 	for (int i = 0; i < n; i++) {
 		x[i] = sin(pi * k * i / n);
@@ -186,69 +185,72 @@ int main() {
 	vector<int> vect;
 	int exercise;
 	cin >> exercise;
-	switch (exercise) 
+	switch (exercise)
 	{
-		case 1:
-			fillArray1(x,n);
-			saveArrayWith1Var("data.txt", x, n);
-			plotFile("data.txt");
-			break;
-		case 2:
-			int number;
-			cin >> number;
-			fillArray2(x, 20, number, pi);
-			saveArrayWith1Var("data.txt", x, n);
-			plotFile("data.txt");
-			break;
-		case 3:
-			int from, to, step;
-			cin >> from >> to >> step;
-			fillArray3(x, from, to, step);
-			for (int i = 0; i != step; i++) {
-				cout << x[i] << '\n';
-			}
-			break;
-		case 4:
-			fillArray4(x, y, 20);
-			saveArrayWith2Var("data.txt", x, y, n);
-			plotFile("data.txt");
-			break;
-		case 5:
-			int a, b, c;
-			cin >> a >> b >> c;
-			fillArray5(x, y, a, b, c, n);
-			saveArrayWith2Var("data.txt", x, y, n);
-			plotFile("data.txt");
-			break;
-		case 6:
-			fillArray6(x, y);
-			saveArrayWith2Var("data.txt", x, y, n);
-			plotFile("data.txt");
-			break;
-		case 7:
-			fillArray6(x, y);
-			fillArray7(x, y, n);
-			break;
-		case 8:
-			fillArray6(x, y);
-			saveArrayWith2Var("data.txt", x, y, n);
-			vect = fillArray8(x, y, n);
-			showVector(vect);
-		case 9:
-			fillArray6(x, y);
-			SaveMaxPoints("MaxPoints.txt", x, y, 20);
-			showArrayWithPoints("data.txt", "MaxPoints.txt");
-		case 10:
-			MakeFunction(x, y, 20);
-			saveArrayWith2Var("data.txt", x, y, 20);
-			fillArray10(x, y, derivative);
-			saveArrayWith2Var("DataDerivative.txt",x,derivative,20);
-			plotFileWith2Graphs("DataDerivative.txt", "data.txt");
-		case 11:
-			fillArray6(x, y);
-			MakeFunction(x, yDerivative, 3.1415);
-			fillArray10(x, yDerivative, derivative);
-			SaveArrayWithDif("data.txt", x, y, yDerivative, 20);
-			plotFile("data.txt");
+	case 1:
+		fillArray1(x, n);
+		saveArrayWith1Var("data.txt", x, n);
+		plotFile("data.txt");
+		break;
+	case 2:
+		int number;
+		cin >> number;
+		fillArray2(x, 20, number, pi);
+		saveArrayWith1Var("data.txt", x, n);
+		plotFile("data.txt");
+		break;
+	case 3:
+		int from, to, step;
+		cin >> from >> to >> step;
+		fillArray3(x, from, to, step);
+		for (int i = 0; i != step; i++) {
+			cout << x[i] << '\n';
+		}
+		break;
+	case 4:
+		fillArray4(x, y, 20);
+		saveArrayWith2Var("data.txt", x, y, n);
+		plotFile("data.txt");
+		break;
+	case 5:
+		int a, b, c;
+		cin >> a >> b >> c;
+		fillArray5(x, y, a, b, c, n);
+		saveArrayWith2Var("data.txt", x, y, n);
+		plotFile("data.txt");
+		break;
+	case 6:
+		fillArray6(x, y);
+		saveArrayWith2Var("data.txt", x, y, n);
+		plotFile("data.txt");
+		break;
+	case 7:
+		fillArray6(x, y);
+		fillArray7(x, y, n);
+		break;
+	case 8:
+		fillArray6(x, y);
+		saveArrayWith2Var("data.txt", x, y, n);
+		vect = fillArray8(x, y, n);
+		showVector(vect);
+	case 9:
+		fillArray6(x, y);
+		saveArrayWith2Var("data.txt", x, y, n);
+		SaveMaxPoints("MaxPoints.txt", x, y, 20);
+		showArrayWithPoints("data.txt", "MaxPoints.txt");
+		break;
+	case 10:
+		MakeFunction(x, y, 20);
+		saveArrayWith2Var("data.txt", x, y, 20);
+		fillArray10(x, y, derivative);
+		saveArrayWith2Var("DataDerivative.txt", x, derivative, 20);
+		plotFileWith2Graphs("DataDerivative.txt", "data.txt");
+		break;
+	case 11:
+		fillArray6(x, y);
+		MakeFunction(x, yDerivative, 3.1415);
+		fillArray10(x, yDerivative, derivative);
+		SaveArrayWithDif("data.txt", x, y, yDerivative, 20);
+		plotFile("data.txt");
 	}
 }
