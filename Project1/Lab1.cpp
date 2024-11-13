@@ -70,6 +70,9 @@ vector<int> findMaxAndMinOfFunctionVector(vector<int> &vector, double* y,int n) 
 		if ((y[i] > y[i + 1]) && (y[i] > y[i - 1])) {
 			vector.push_back(i);
 		}
+		if ((y[i] < y[i + 1]) && (y[i] < y[i - 1])) {
+			vector.push_back(i);
+		}
 	}
 	return vector;
 }
